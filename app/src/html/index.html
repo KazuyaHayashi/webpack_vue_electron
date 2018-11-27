@@ -2,10 +2,10 @@
 <html>
     <head>
         <title>Getting Started</title>
-        <script type="text/javascript" src="../renderer/renderer.js"></script>
     </head>
     <body>
-        <p>Blue color text</p>
-        <div id="app">{{ message }}</div>
+        <div id="app">
+            <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+        </div>
     </body>
 </html>
