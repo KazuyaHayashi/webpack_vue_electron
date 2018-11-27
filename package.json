@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "bootstrap-vue": "^2.0.0-rc.11",
     "css-loader": "^1.0.1",
     "electron": "^3.0.10",
     "electron-builder": "^20.36.2",
