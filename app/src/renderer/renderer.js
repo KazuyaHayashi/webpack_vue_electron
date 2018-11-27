@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import HelloComponent from './components/hello.vue';
 
 Vue.component('todo-item', {
     props: ['todo'],
@@ -7,11 +8,5 @@ Vue.component('todo-item', {
 
 let app = new Vue({
     el: '#app',
-    data: {
-        groceryList: [
-            { id: 0, text: 'Vegetables' },
-            { id: 1, text: 'Cheese' },
-            { id: 2, text: 'Whatever else humans are supposed to eat' }
-        ]
-    },
+    components: {'hello': HelloComponent},
 });

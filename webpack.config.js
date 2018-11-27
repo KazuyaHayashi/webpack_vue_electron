@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 
 const mainProcessConfig = {
@@ -32,11 +33,27 @@ const rendererProcessConfig = {
             'vue$': 'vue/dist/vue.esm.js'
         }
     },
+    module: {
+        rules: [
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'vue-style-loader',
+                    'css-loader'
+                ]
+            }
+        ]
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: './app/src/html/index.html',
             filename: path.resolve(__dirname, 'build/html/index.html')
-        })
+        }),
+        new VueLoaderPlugin()
     ],
     target: 'electron-renderer'
 };
